@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import csvParse from "csv-parse";
 import fs from "fs";
 
