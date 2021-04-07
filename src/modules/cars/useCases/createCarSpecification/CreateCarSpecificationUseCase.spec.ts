@@ -1,4 +1,3 @@
-import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
 import { AppError } from "@shared/errors/AppError";
 
@@ -40,6 +39,7 @@ describe("Create a car specification", () => {
       brand: "Car Brand",
       category_id: "category",
     });
+
     const specification = await specificationsRepositoryInMemory.create({
       description: "test",
       name: "test",
@@ -47,9 +47,12 @@ describe("Create a car specification", () => {
 
     const specifications_id = [specification.id];
 
-    await createCarSpecificationUseCase.execute({
+    const specificationsCars = await createCarSpecificationUseCase.execute({
       car_id: car.id,
       specifications_id,
     });
+
+    expect(specificationsCars).toHaveProperty("specifications");
+    expect(specificationsCars.specifications.length).toBe(1);
   });
 });
