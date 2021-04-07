@@ -2,16 +2,20 @@ import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
 import { AppError } from "@shared/errors/AppError";
 
+import { SpecificationsRepositoryInMemory } from "../../repositories/in-memory/SpecificationsRepositoryInMemory";
 import { CreateCarSpecificationUseCase } from "./CreateCarSpecificationUseCase";
 
 let createCarSpecificationUseCase: CreateCarSpecificationUseCase;
 let carsRepositoryinMemory: CarsRepositoryInMemory;
+let specificationsRepositoryInMemory: SpecificationsRepositoryInMemory;
 
 describe("Create a car specification", () => {
   beforeEach(() => {
     carsRepositoryinMemory = new CarsRepositoryInMemory();
+    specificationsRepositoryInMemory = new SpecificationsRepositoryInMemory();
     createCarSpecificationUseCase = new CreateCarSpecificationUseCase(
-      carsRepositoryinMemory
+      carsRepositoryinMemory,
+      specificationsRepositoryInMemory
     );
   });
   it("should not be able to add a new specification to unexisting car", async () => {
@@ -36,8 +40,12 @@ describe("Create a car specification", () => {
       brand: "Car Brand",
       category_id: "category",
     });
+    const specification = await specificationsRepositoryInMemory.create({
+      description: "test",
+      name: "test",
+    });
 
-    const specifications_id = ["54321"];
+    const specifications_id = [specification.id];
 
     await createCarSpecificationUseCase.execute({
       car_id: car.id,
