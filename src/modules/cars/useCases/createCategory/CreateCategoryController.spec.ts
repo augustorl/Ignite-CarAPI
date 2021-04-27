@@ -9,7 +9,7 @@ import createConnection from "@shared/infra/typeorm";
 let connection: Connection;
 describe("Create Category Controller", () => {
   beforeAll(async () => {
-    const connection = await createConnection();
+    connection = await createConnection();
 
     await connection.runMigrations();
 
@@ -42,14 +42,13 @@ describe("Create Category Controller", () => {
         description: "Description supertest",
       })
       .set({
-        Authorization: `Bearer ${token},`,
+        Authorization: `Bearer ${token}`,
       });
-    console.log(response);
 
     expect(response.status).toBe(201);
   });
 
-  it("should not able to two categorys with the same name", async () => {
+  it("Should not be able to create two categories with the same name", async () => {
     const responseToken = await request(app).post("/sessions").send({
       email: "admin@rentx.com.br",
       password: "admin",
