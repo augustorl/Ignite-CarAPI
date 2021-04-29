@@ -12,12 +12,12 @@ export default class UsersTokensRepository implements IUsersTokensRepository {
   }
 
   async create({
-    expires_date,
+    expire_date,
     refresh_token,
     user_id,
   }: ICreateUserTokenDTO): Promise<UserTokens> {
     const userToken = this.repository.create({
-      expires_date,
+      expire_date,
       refresh_token,
       user_id,
     });
