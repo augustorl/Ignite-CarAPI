@@ -3,7 +3,6 @@ import { verify } from "jsonwebtoken";
 
 import auth from "@config/auth";
 import { AppError } from "@errors/AppError";
-import UsersTokensRepository from "@modules/accounts/infra/typeorm/repositories/UsersTokensRepository";
 
 interface IPayload {
   sub: string;
@@ -15,8 +14,6 @@ export async function ensureUserIsAuthenticated(
 ) {
   const authHeader = request.headers.authorization;
 
-  const usersTokensRepository = new UsersTokensRepository();
-
   if (!authHeader) {
     throw new AppError("Invalid or missing token.", 401);
   }
@@ -24,19 +21,7 @@ export async function ensureUserIsAuthenticated(
   const [, token] = authHeader.split(" ");
 
   try {
-    const { sub: user_id } = verify(
-      token,
-      auth.secret_refresh_token
-    ) as IPayload;
-
-    const user = await usersTokensRepository.findUserByIdAndRefreshToken(
-      user_id,
-      token
-    );
-
-    if (!user) {
-      throw new AppError("User does not exists.", 401);
-    }
+    const { sub: user_id } = verify(token, auth.secret_token) as IPayload;
 
     request.user = {
       id: user_id,
