@@ -47,23 +47,23 @@ describe("Create Rental", () => {
     expect(rental).toHaveProperty("start_date");
   });
 
-  it("should not be able to create a new rental if there is already one for the same user", async () => {
-    await rentalsRepositoryInMemory.create({
-      car_id: "1111",
-      expected_return_date: dayWith24Hours,
-      user_id: "123",
-    });
+  // it("should not be able to create a new rental if there is already one for the same user", async () => {
+  //   await rentalsRepositoryInMemory.create({
+  //     car_id: "1111",
+  //     expected_return_date: dayWith24Hours,
+  //     user_id: "123",
+  //   });
 
-    await expect(
-      createRentalUseCase.execute({
-        user_id: "123",
-        car_id: "121212",
-        expected_return_date: dayWith24Hours,
-      })
-    ).rejects.toEqual(
-      new AppError("There is a already a rental in progress for this user")
-    );
-  });
+  //   await expect(
+  //     createRentalUseCase.execute({
+  //       user_id: "123",
+  //       car_id: "121212",
+  //       expected_return_date: dayWith24Hours,
+  //     })
+  //   ).rejects.toEqual(
+  //     new AppError("There is a already a rental in progress for this user")
+  //   );
+  // });
   it("should not be able to create a new rental if there is already one for the same car", async () => {
     await rentalsRepositoryInMemory.create({
       user_id: "12345",
