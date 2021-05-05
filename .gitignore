@@ -1,5 +1,7 @@
 node_modules
+.vscode
 .env
-coverage/**
-dist/*
-tmp/
+coverage
+dist/
+tmp/*
+!tmp/.gitkeep
