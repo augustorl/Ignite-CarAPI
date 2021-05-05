@@ -1,5 +1,5 @@
+import { AppError } from "@errors/AppError";
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
-import { AppError } from "@shared/errors/AppError";
 
 import { SpecificationsRepositoryInMemory } from "../../repositories/in-memory/SpecificationsRepositoryInMemory";
 import { CreateCarSpecificationUseCase } from "./CreateCarSpecificationUseCase";
