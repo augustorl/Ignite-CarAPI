@@ -4,10 +4,10 @@
     "host": "localhost",
     "username": "docker",
     "password": "ignite",
-    "database": "rentx", 
-    "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
-    "entities": ["./src/modules/**/entities/*.ts"],
+    "database": "rentx",
+    "migrations": ["./dist/shared/infra/typeorm/migrations/*.js"],
+    "entities": ["./dist/modules/**/entities/*.js"],
     "cli": {
-      "migrationsDir": "./src/shared/infra/typeorm/migrations"
+      "migrationsDir": "./dist/shared/infra/typeorm/migrations"
     }
   }
