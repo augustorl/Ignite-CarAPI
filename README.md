@@ -1,4 +1,4 @@
-<div align=center><img src=".github/logo.png"/></div>
+<div align=center><img src="https://i.imgur.com/oUAKMC5.png" /></div>
 <br/>
 <h3 align=center>A Car Rental API 🔥</h3>
 
