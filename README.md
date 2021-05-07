@@ -9,8 +9,6 @@
 <a href="#License">license</a>
 </div>
 
----
-
 ## About the project
 
 RentX is a NodeJS REST API for renting cars!
