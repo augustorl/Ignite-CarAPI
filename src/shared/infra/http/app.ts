@@ -9,7 +9,7 @@ import upload from "@config/upload";
 import { AppError } from "@errors/AppError";
 import * as Sentry from "@sentry/node";
 import * as Tracing from "@sentry/tracing";
-import rateLimiter from "@shared/infra/http/middlewares/rateLimiter";
+// import rateLimiter from "@shared/infra/http/middlewares/rateLimiter";
 import createConnection from "@shared/infra/typeorm/";
 
 import swaggerFile from "../../../swagger.json";
@@ -20,7 +20,7 @@ import "@shared/container";
 createConnection();
 const app = express();
 
-app.use(rateLimiter);
+// app.use(rateLimiter);
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
