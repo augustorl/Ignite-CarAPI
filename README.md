@@ -18,9 +18,9 @@ RentX is a NodeJS REST API for renting cars!
 ## Tecnologies
 
 - [Typescript](https://www.typescriptlang.org/)
-- [Nodejs](https://www.nodejs.org)
-- [Expressjs](https://github.com/expressjs/express)
-- [Docker](hhttps://www.docker.com/)
+- [NodeJS](https://www.nodejs.org)
+- [Express](https://github.com/expressjs/express)
+- [Docker](https://www.docker.com/)
 
 ## How to run
 
@@ -29,7 +29,7 @@ RentX is a NodeJS REST API for renting cars!
 then, use your terminal to clone your fork to your local machine
 
 ```bash
-$ git clone <your-fork-url>
+$ git clone https://github.com/augustorl/rentx-ap
 $ cd rentx
 $ yarn
 ```
