@@ -1,12 +1,12 @@
 <div align=center><img src="https://i.imgur.com/oUAKMC5.png" /></div>
 <br/>
-<h3 align=center>🚙 A car Rental API 🚙</h3>
+<h3 align=center>🚙 A car rental API 🚙</h3>
 
 <div align=center>
 <a href="#About-the-project">About</a> |
 <a href="#Tecnologies">Tecnologies</a> |
 <a href="#How-to-run">How to run</a> |
-<a href="#License">license</a>
+<a href="#License">License</a>
 </div>
 
 ## About the project
