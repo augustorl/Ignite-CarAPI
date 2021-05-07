@@ -1,10 +1,19 @@
-export class AppError {
+import { StatusCodes } from "http-status-codes";
+
+import { errorMessages } from "./ErrorMessages";
+
+class AppError {
   public readonly message: string;
 
   public readonly statusCode: number;
 
-  constructor(message: string, statusCode = 400) {
-    this.message = message;
-    this.statusCode = statusCode;
+  constructor(
+    message: keyof typeof errorMessages,
+    statusCode: keyof typeof StatusCodes = "BAD_REQUEST"
+  ) {
+    this.message = errorMessages[message];
+    this.statusCode = StatusCodes[statusCode];
   }
 }
+
+export { AppError };
