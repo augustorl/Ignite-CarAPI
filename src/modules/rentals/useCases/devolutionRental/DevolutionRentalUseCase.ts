@@ -29,7 +29,7 @@ class DevolutionRentalUseCase {
     const minimumRentalDays = 1;
 
     if (!rental) {
-      throw new AppError("Rental does not exists!");
+      throw new AppError("rent_unregistered");
     }
 
     const dateNow = this.dateProvider.dateNow();

@@ -33,7 +33,7 @@ export default class SendForgotPasswordMailUseCase {
     );
 
     if (!user) {
-      throw new AppError("User does not exists!");
+      throw new AppError("user_unregistered");
     }
 
     const token = uuid();

@@ -33,7 +33,7 @@ export default class RefreshTokenUseCase {
     );
 
     if (!userToken) {
-      throw new AppError("Refresh Token does not exists!");
+      throw new AppError("missing_auth_token");
     }
 
     await this.usersTokensRepository.deleteById(userToken.id);

@@ -44,7 +44,7 @@ describe("Send Forgot password Mail", () => {
   it("should not be able to send a forgot password e-mail if user does not exists", async () => {
     await expect(
       sendForgotPasswordMailUseCase.execute("lifu@wad.ss")
-    ).rejects.toEqual(new AppError("User does not exists!"));
+    ).rejects.toEqual(new AppError("user_unregistered"));
   });
 
   it("should be able to create a user token", async () => {

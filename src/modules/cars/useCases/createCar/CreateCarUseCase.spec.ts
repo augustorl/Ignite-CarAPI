@@ -45,7 +45,7 @@ describe("Create Car", () => {
         brand: "Car Brand",
         category_id: "category",
       })
-    ).rejects.toEqual(new AppError("Car already exists!"));
+    ).rejects.toEqual(new AppError("car_already_registered"));
   });
   it("should create a car with available:true by default", async () => {
     const car = await createCarUseCase.execute({

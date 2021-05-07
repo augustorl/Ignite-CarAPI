@@ -15,7 +15,7 @@ export async function ensureUserIsAuthenticated(
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
-    throw new AppError("Invalid or missing token.", 401);
+    throw new AppError("invalid_token", "UNAUTHORIZED");
   }
 
   const [, token] = authHeader.split(" ");
@@ -29,6 +29,6 @@ export async function ensureUserIsAuthenticated(
 
     next();
   } catch {
-    throw new AppError("Invalid or missing token", 401);
+    throw new AppError("invalid_token", "UNAUTHORIZED");
   }
 }

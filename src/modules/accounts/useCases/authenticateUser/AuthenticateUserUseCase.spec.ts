@@ -49,7 +49,7 @@ describe("Authenticate User", () => {
         email: "false@email.com",
         password: "1234",
       })
-    ).rejects.toEqual(new AppError("Password or email is incorrect!"));
+    ).rejects.toEqual(new AppError("incorrect_credentials"));
   });
   it("Should not be able to authenticate with incorrect password", async () => {
     const user: ICreateUserDTO = {
@@ -65,6 +65,6 @@ describe("Authenticate User", () => {
         email: user.email,
         password: "incorrectPassword",
       })
-    ).rejects.toEqual(new AppError("Password or email is incorrect!"));
+    ).rejects.toEqual(new AppError("incorrect_credentials"));
   });
 });
