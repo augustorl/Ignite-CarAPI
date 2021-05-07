@@ -1,6 +1,6 @@
 <div align=center><img src="https://i.imgur.com/oUAKMC5.png" /></div>
 <br/>
-<h3 align=center>A Car Rental API 🔥</h3>
+<h3 align=center>🚙 Car Rental API 🚙</h3>
 
 <div align=center>
 <a href="#About-the-project">about</a> |
