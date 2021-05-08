@@ -20,6 +20,11 @@ RentX is a NodeJS REST API for renting cars!
 - [Express](https://github.com/expressjs/express)
 - [Docker](https://www.docker.com/)
 
+
+## Documentation
+
+All API available endpoints are documented using [Swagger](https://swagger.io/). If your already running the api you can access the docs in http://localhost:3333/api-docs, otherwise you can see the available version [here](http://google.com).
+
 ## How to run
 
 ### Clone Repo and install dependencies using yarn
@@ -44,12 +49,6 @@ $ yarn test # runs jest tests ang generates src/coverage
 $ yarn build # Build to deploy
 ```
 
-## Documentation
-
-The API endpoints are well documented on the swagger interface. To check it, just run the api and access 
-
-*http://localhost:3333/api-docs*
-
 ## License
 
-This project is under the MIT License. Read the [LICENSE](LICENSE) file for further information.
+This project is under the MIT License. Read the [LICENSE](LICENSE.md) file for further information.
