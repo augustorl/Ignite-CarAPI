@@ -22,9 +22,7 @@ RentX is a NodeJS REST API for renting cars!
 
 ## How to run
 
-**fork this repository on your github**
-
-then, use your terminal to clone your fork to your local machine
+### Clone Repo and install dependencies using yarn
 
 ```bash
 $ git clone https://github.com/augustorl/rentx-ap
@@ -32,11 +30,18 @@ $ cd rentx
 $ yarn
 ```
 
-**App commands**
+### Rename config files
 ```bash
-$ yarn dev # run development code
-# $ yarn test # runs jest tests ang generates test coverage
-# $ yarn build # create a new build using babel
+$ mv ormconfig.json.exemple ormconfig.json
+$ mv .env.exemple .env
+```
+
+### Run docker or server
+```bash
+$ yarn dev # runs a local server
+$ docker-compose up -d database # runs docker-compose.yml
+$ yarn test # runs jest tests ang generates src/coverage
+$ yarn build # Build to deploy
 ```
 
 ## Documentation
