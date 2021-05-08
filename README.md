@@ -42,6 +42,7 @@ $ mv .env.exemple .env
 ```
 
 ### Run docker or server
+#### Edit .env and ormconfig.json using your prefered IDE.
 ```bash
 $ yarn dev # runs a local server
 $ docker-compose up -d database # runs docker-compose.yml
