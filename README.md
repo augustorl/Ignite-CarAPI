@@ -30,8 +30,8 @@ All API available endpoints are documented using [Swagger](https://swagger.io/).
 ### Clone Repo and install dependencies using yarn
 
 ```bash
-$ git clone https://github.com/augustorl/rentx-ap
-$ cd rentx
+$ git clone https://github.com/augustorl/rentx-api
+$ cd rentx-api
 $ yarn
 ```
 
