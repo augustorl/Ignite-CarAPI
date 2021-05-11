@@ -23,7 +23,7 @@ RentX is a NodeJS REST API for renting cars!
 
 ## Documentation
 
-All API available endpoints are documented using [Swagger](https://swagger.io/). If you are running locally this API you can access the docs in http://localhost:3333/api-docs, otherwise you can see the online version [here](http://google.com).
+All API available endpoints are documented using [Swagger](https://swagger.io/). If you are running locally this API you can access the docs in http://localhost:3333/api-docs.
 
 ## How to run
 
